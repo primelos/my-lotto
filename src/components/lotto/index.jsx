@@ -12,13 +12,13 @@ const Lotto = () => {
 
     while (lotteryNums.length < 5) {
       let lotNum = Math.floor(Math.random() * 1000);
-      if (lotNum > 0 && lotNum <= 70 && !lotteryNums.includes(lotNum)) {
+      if (lotNum > 0 && lotNum <= 47 && !lotteryNums.includes(lotNum)) {
         lotteryNums.push(lotNum);
       }
     }
     while (megaNumber.length < 1) {
       let mega = Math.floor(Math.random() * 1000);
-      if (mega > 0 && mega <= 25) {
+      if (mega > 0 && mega <= 27) {
         megaNumber.push(mega);
       }
     }
@@ -41,22 +41,24 @@ const Lotto = () => {
 
 
   return (
-    <div className='box-container'>
-      {num.length === 0 
-        ? <p>Let pick them lucky numbers</p> 
-        : ''
-      }
+    <div className="box-container">
+      {num.length === 0 ? <p>Let pick them lucky numbers</p> : ""}
       <div className="number-container">
-        {num.map((n,i) => (
-          <div key={i} className='box-num'>
-            <p className='win-num'>{n}</p>
+        {num.map((n, i) => (
+          <div key={i} className="box-num">
+            <p className="win-num">{n}</p>
           </div>
         ))}
-        <h3>{mega}</h3>
+        {mega.length === 0 ? '':
+        
+        <div className="box-num">
+          <h3 className="win-num">{mega}</h3>
+        </div>
+        }
       </div>
       <button onClick={handleNumbers}>New Numbers</button>
     </div>
-  )
+  );
 }
 
 export default Lotto
