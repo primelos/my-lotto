@@ -10,7 +10,15 @@
 
     .box-num{
       align-self: center;
-      background-color: red;
+      background-color: #f6911e;
+      width: 40px;    
+      border: 2px #fed102 solid;
+    
+    
+      .win-num {
+        color: #02a5e3;
+        font-weight: 900;
+      }
     }
 
   }
