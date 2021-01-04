@@ -1,25 +1,76 @@
 .box-container {
   text-align: center;
   
-
-  .number-container {
+  .game-results{
     display: flex;
-    flex-direction: row;
-    justify-content: space-evenly;
-    
+    justify-content: space-around;
 
-    .box-num{
-      align-self: center;
-      background-color: #f6911e;
-      width: 40px;    
-      border: 2px #fed102 solid;
+    .five-numbers{
+      .number-container {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-evenly;
+        
     
+        .box-num{
+          align-self: center;
+          background-color: #fed102;
+          width: 47px;
+          border: 2px #473c0b38 solid;
+          margin: 0 2px;
+          border-radius: 50%;
+        
+        
+          .win-num {
+            color: white;
+            font-weight: 900;
+          }
+        }
     
-      .win-num {
-        color: #02a5e3;
-        font-weight: 900;
       }
-    }
 
+    }
+    .mega {
+       .box-num{
+          align-self: center;
+          background-color: #ff5200;
+          width: 47px;
+          border: 2px #473c0b38 solid;
+          margin: 0 2px;
+          border-radius: 50%;
+        
+        
+          .win-num {
+            color: white;
+            font-weight: 900;
+          }
+        }
+    }
+  }
+
+  .box-button {
+    padding-top: 25px;
+    button {
+      background-color: #02a5e3; ;
+      border: none;
+      color: #fff;
+      border-radius: 4%;
+      padding: 10px;
+      outline: none;
+    }
   }
 }
+
+// @media (min-width: 768px) {
+//   .box-container{
+//     .number-container{
+
+//       .box-num{
+//           align-self: center;
+//           background-color: red;
+//           width: 80px;    
+//           border: 2px #fed102 solid;
+//     }
+//     }
+//   }
+// }
