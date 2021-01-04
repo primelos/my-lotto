@@ -43,20 +43,33 @@ const Lotto = () => {
   return (
     <div className="box-container">
       {num.length === 0 ? <p>Let pick them lucky numbers</p> : ""}
-      <div className="number-container">
-        {num.map((n, i) => (
-          <div key={i} className="box-num">
-            <p className="win-num">{n}</p>
+      <div className="game-results">
+
+        <div className="five-numbers">
+          <p>Numbers to play</p>
+          <div className="number-container">
+            {num.map((n, i) => (
+              <div className="box-num">
+                <p className="win-num">{n}</p>
+              </div>
+            ))}
           </div>
-        ))}
-        {mega.length === 0 ? '':
-        
-        <div className="box-num">
-          <h3 className="win-num">{mega}</h3>
         </div>
-        }
+        
+        <div className="mega">
+          <p>Mega</p>
+          {mega.length === 0 ? (
+            ""
+          ) : (
+            <div className="box-num">
+              <p className="win-num">{mega}</p>
+            </div>
+          )}
+        </div>
       </div>
-      <button onClick={handleNumbers}>New Numbers</button>
+      <div className="box-button">
+        <button onClick={handleNumbers}>New Numbers</button>
+      </div>
     </div>
   );
 }
