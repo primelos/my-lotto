@@ -42,11 +42,11 @@ const Lotto = () => {
 
   return (
     <div className="box-container">
-      {num.length === 0 ? <p>Let pick them lucky numbers</p> : ""}
+      <p style={{fontSize: '1.5rem'}}>Super Lotto</p>
       <div className="game-results">
-
         <div className="five-numbers">
-          <p>Numbers to play</p>
+          {num.length === 0 ? "" : <p>Numbers to play</p>}
+
           <div className="number-container">
             {num.map((n, i) => (
               <div className="box-num">
@@ -55,9 +55,10 @@ const Lotto = () => {
             ))}
           </div>
         </div>
-        
+
         <div className="mega">
-          <p>Mega</p>
+          {num.length === 0 ? "" : <p>Mega</p>}
+
           {mega.length === 0 ? (
             ""
           ) : (
