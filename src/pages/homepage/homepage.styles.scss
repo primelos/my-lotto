@@ -1,0 +1,14 @@
+.home-box{
+  position: relative;
+  height: 100vh;
+
+  .title{
+      padding: 21px 0 26px 0;
+  }
+  
+  .give-credit{
+    position:absolute;
+    bottom: 30px;
+    left: 20px;
+  }
+}
