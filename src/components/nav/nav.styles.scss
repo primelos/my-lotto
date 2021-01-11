@@ -1,0 +1,29 @@
+.nav-box {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  .nav-button {
+   background-color: #fd682f;
+    width: 23%;
+    border-radius: 50px;
+    height: 84px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 0 14px 0;
+    box-shadow: 8px 6px 12px -1px #ca6a08f5;
+    transition: background-color 2s ease-out;
+    &:hover{
+      background-color: #641e25;
+    }
+    &:active{
+      transform:scale(0.9);
+      transition: .2s ease-in-out;
+    }
+    a{
+      text-align: center;
+      color: white;
+    }
+  }
+}
