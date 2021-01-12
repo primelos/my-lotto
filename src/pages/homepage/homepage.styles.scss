@@ -2,13 +2,16 @@
   position: relative;
   height: 100vh;
 
+  h1{
+    font-size: 3.5rem;
+  }
   .title{
       padding: 21px 0 26px 0;
   }
   
   .give-credit{
     position:absolute;
-    bottom: 30px;
-    left: 20px;
+    bottom: 50px;
+    left: 14%;
   }
 }

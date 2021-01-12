@@ -1,6 +1,16 @@
-.box-container {
+.mega-container {
   text-align: center;
-  
+  background-color: #ffd101;
+  height: 100vh;
+  p{
+    .p-mega {
+      color: #ee2d24;
+    }
+    .p-millions {
+      color: #1a429a;
+    }
+
+  }
   .game-results{
     display: flex;
     justify-content: space-around;
@@ -14,7 +24,7 @@
     
         .box-num{
           align-self: center;
-          background-color: #fed102;
+          background-color: #fcd802;
           width: 55px;
           border: 2px #473c0b38 solid;
           margin: 0 2px;

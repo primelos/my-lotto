@@ -1,25 +1,47 @@
-.box-container {
+.lotto-container {
   text-align: center;
-  
+  background-color: #ff8d0726;
+  height: 100vh;
+  padding-top: 30px;
+  padding-bottom: 30px;
+  border: 10px solid orange;
+  background-image: linear-gradient(#ff8d0726, orange);
+
+  .title{
+    font-size: 3.5rem;
+    padding-bottom: 30px;
+    color: #00a5e3;
+  }
   .game-results{
     display: flex;
     justify-content: space-around;
 
+
     .five-numbers{
+      p{
+        font-size: 1.9rem;
+        color: #00a5e3;
+        padding-bottom: 20px;
+        
+
+      }
       .number-container {
         display: flex;
-        flex-direction: row;
-        justify-content: space-evenly;
+        // flex-direction: row;
+        // justify-content: space-evenly;
         
     
         .box-num{
-          align-self: center;
           background-color: #fed102;
           width: 55px;
-          border: 2px #473c0b38 solid;
+          height: 55px;
           margin: 0 2px;
           border-radius: 50%;
           border: none;
+          display: flex;
+          justify-content: center;
+
+          
         
           .win-num {
             color: white;
@@ -32,15 +54,22 @@
     }
     .mega {
         margin-right: 10px;
-        
+        p{
+          font-size: 1.9rem;
+          color: #00a5e3;
+          padding-bottom: 20px;
+          
+      }
        .box-num{
-          align-self: center;
-          background-color: #ff5200;
+          background-color: #ffb123;
           width: 55px;
           border: 2px rgba(71, 60, 11, 0.22) solid;
           margin: 0 2px;
           border-radius: 50%;
-          // border: none;
+          height: 55px;
+          display: flex;
+          justify-content: center;
+          
         
         
           .win-num {
@@ -54,13 +83,15 @@
   .box-button {
     padding-top: 25px;
     button {
-      background-color: #02a5e3; ;
+      background-color: #02a5e3;
       border: none;
       color: #fff;
       border-radius: 4%;
-      padding: 10px;
+      padding: 13px;
       outline: none;
       font-weight: 900;
+      font-size: 1.2rem;
+      border-radius: 8px;
 
     }
     button:hover {
