@@ -37,7 +37,8 @@ const Mega = () => {
   return (
     <div className="mega-container">
       <p style={{ fontSize: "3.5rem" }}>
-        <span className='p-mega'>Mega</span> <span className='p-millions'>Millions</span>
+        <span className="p-mega">Mega</span>{" "}
+        <span className="p-millions">Millions</span>
       </p>
       <div className="game-results">
         <div className="five-numbers">
@@ -65,7 +66,11 @@ const Mega = () => {
         </div>
       </div>
       <div className="box-button">
-        <button onClick={handleNumbers}>New Numbers</button>
+        {num.length < 1 ? (
+          <button onClick={handleNumbers}>New Numbers</button>
+        ) : (
+          <button onClick={handleNumbers}>Get New Set</button>
+        )}
       </div>
     </div>
   );
