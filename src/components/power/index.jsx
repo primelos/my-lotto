@@ -33,8 +33,8 @@ const Power = () => {
  }
 
  return (
-   <div className="box-container">
-     <p style={{ fontSize: "1.5rem" }}>Power Ball</p>
+   <div className="power-container">
+     <h2>Power Ball</h2>
      <div className="game-results">
        <div className="five-numbers">
          {num.length === 0 ? "" : <p>Numbers to play</p>}

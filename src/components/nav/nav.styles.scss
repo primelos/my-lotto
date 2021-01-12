@@ -4,7 +4,7 @@
   align-items: center;
 
   .nav-button {
-   background-color: #fd682f;
+    background-color: #f7dbd0;
     width: 100px;
     border-radius: 50px;
     height: 100px;
@@ -15,7 +15,7 @@
     box-shadow: 8px 6px 12px -1px #ca6a08f5;
     transition: background-color 2s ease-out;
     &:hover{
-      background-color: #641e25;
+      background-color: #e89515;
     }
     &:active{
       transform:scale(0.9);
@@ -23,7 +23,8 @@
     }
     a{
       text-align: center;
-      color: white;
+      color: #6b6b6b;
+      font-weight: 600;
     }
   }
 }

@@ -35,8 +35,10 @@ const Mega = () => {
 
 
   return (
-    <div className="box-container">
-      <p style={{ fontSize: "1.5rem" }}>Mega Millions</p>
+    <div className="mega-container">
+      <p style={{ fontSize: "3.5rem" }}>
+        <span className='p-mega'>Mega</span> <span className='p-millions'>Millions</span>
+      </p>
       <div className="game-results">
         <div className="five-numbers">
           {num.length === 0 ? "" : <p>Numbers to play</p>}

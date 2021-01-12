@@ -41,8 +41,8 @@ const Lotto = () => {
 
 
   return (
-    <div className="box-container">
-      <p style={{fontSize: '1.5rem'}}>Super Lotto</p>
+    <div className="lotto-container">
+      <p className="title">Super Lotto</p>
       <div className="game-results">
         <div className="five-numbers">
           {num.length === 0 ? "" : <p>Numbers to play</p>}
@@ -69,7 +69,11 @@ const Lotto = () => {
         </div>
       </div>
       <div className="box-button">
-        <button onClick={handleNumbers}>New Numbers</button>
+        {num.length < 1 ? (
+          <button onClick={handleNumbers}>New Numbers</button>
+        ) : (
+          <button onClick={handleNumbers}>Get New Set</button>
+        )}
       </div>
     </div>
   );
