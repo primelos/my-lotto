@@ -34,7 +34,7 @@ const Power = () => {
 
  return (
    <div className="power-container">
-     <h2>Power Ball</h2>
+     <p className="title">POWERBALL</p>
      <div className="game-results">
        <div className="five-numbers">
          {num.length === 0 ? "" : <p>Numbers to play</p>}
@@ -61,7 +61,11 @@ const Power = () => {
        </div>
      </div>
      <div className="box-button">
-       <button onClick={handleNumbers}>New Numbers</button>
+       {num.length < 1 ? (
+         <button onClick={handleNumbers}>New Numbers</button>
+       ) : (
+         <button onClick={handleNumbers}>Get New Set</button>
+       )}
      </div>
    </div>
  );

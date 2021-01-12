@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from 'react'
 import './lotto.styles.scss'
-
+import Button from "@material-ui/core/Button";
+import Menu from "@material-ui/core/Menu";
+import MenuItem from "@material-ui/core/MenuItem";
 
 const Lotto = () => {
   const [num, setNum] = useState([])
@@ -42,6 +44,15 @@ const Lotto = () => {
 
   return (
     <div className="lotto-container">
+      {/* <div>
+        <Button
+          aria-controls="simple-menu"
+          aria-haspopup="true"
+          // onClick={}
+        >
+          Open Menu
+        </Button>
+      </div> */}
       <p className="title">Super Lotto</p>
       <div className="game-results">
         <div className="five-numbers">
