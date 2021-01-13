@@ -12,13 +12,13 @@ const Mega = () => {
 
     while (lotteryNums.length < 5) {
       let lotNum = Math.floor(Math.random() * 1000);
-      if (lotNum > 0 && lotNum <= 75 && !lotteryNums.includes(lotNum)) {
+      if (lotNum > 0 && lotNum <= 70 && !lotteryNums.includes(lotNum)) {
         lotteryNums.push(lotNum);
       }
     }
     while (megaNumber.length < 1) {
       let mega = Math.floor(Math.random() * 1000);
-      if (mega > 0 && mega <= 46) {
+      if (mega > 0 && mega <= 25) {
         megaNumber.push(mega);
       }
     }
