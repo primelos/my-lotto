@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
 import './power.styles.scss'
+import GameDays from "../game-days";
 
 const Power = () => {
  const [num, setNum] = useState([]);
@@ -67,6 +68,7 @@ const Power = () => {
          <button onClick={handleNumbers}>Get New Set</button>
        )}
      </div>
+     <GameDays day1="Wednesday" day2="Saturday" time='7:00pm'/>
    </div>
  );
 }

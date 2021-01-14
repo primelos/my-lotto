@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import './mega.styles.scss'
-
+import GameDays from '../game-days'
 
 const Mega = () => {
   const [num, setNum] = useState([]);
@@ -36,7 +36,7 @@ const Mega = () => {
 
   return (
     <div className="mega-container">
-      <p style={{ fontSize: "3.5rem" }}>
+      <p className='title'>
         <span className="p-mega">Mega</span>{" "}
         <span className="p-millions">Millions</span>
       </p>
@@ -72,6 +72,7 @@ const Mega = () => {
           <button onClick={handleNumbers}>Get New Set</button>
         )}
       </div>
+      <GameDays day1='Tuesday' day2='Friday' time='7:45pm'/> 
     </div>
   );
 }
