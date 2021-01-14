@@ -3,6 +3,7 @@ import './lotto.styles.scss'
 import Button from "@material-ui/core/Button";
 import Menu from "@material-ui/core/Menu";
 import MenuItem from "@material-ui/core/MenuItem";
+import GameDays from "../game-days";
 
 const Lotto = () => {
   const [num, setNum] = useState([])
@@ -86,6 +87,7 @@ const Lotto = () => {
           <button onClick={handleNumbers}>Get New Set</button>
         )}
       </div>
+      <GameDays day1="Wednesday" day2="Saturday" time='7:45pm'/>
     </div>
   );
 }
