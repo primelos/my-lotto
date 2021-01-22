@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react'
+import React, { useState } from 'react'
 import './lotto.styles.scss'
 import Button from "@material-ui/core/Button";
 import Menu from "@material-ui/core/Menu";
@@ -8,6 +8,10 @@ import GameDays from "../game-days";
 const Lotto = () => {
   const [num, setNum] = useState([])
   const [mega, setMega] = useState([]);
+
+  function sortNums(a, b) {
+    return a - b;
+  }
 
   function lottery() {
     let lotteryNums = [];
@@ -32,7 +36,7 @@ const Lotto = () => {
 
   function handleNumbers(){
     let test1 = lottery()
-    setNum(prev => prev = test1.lotteryNums)
+    setNum(prev => prev = test1.lotteryNums.sort(sortNums))
     console.log(test1.lotteryNums)
     setMega(prev => prev = test1.megaNumber)
   }
