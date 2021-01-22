@@ -5,7 +5,9 @@ import GameDays from "../game-days";
 const Power = () => {
  const [num, setNum] = useState([]);
  const [mega, setMega] = useState([]);
-
+ function sortNums(a, b){
+  return a-b
+ }
  function lottery() {
    let lotteryNums = [];
    let megaNumber = [];
@@ -22,13 +24,13 @@ const Power = () => {
        megaNumber.push(mega);
      }
    }
-
+   
    return { lotteryNums, megaNumber };
  }
 
  function handleNumbers() {
    let test1 = lottery();
-   setNum((prev) => (prev = test1.lotteryNums));
+   setNum((prev) => (prev = test1.lotteryNums.sort(sortNums)));
    console.log(test1.lotteryNums);
    setMega((prev) => (prev = test1.megaNumber));
  }
