@@ -40,7 +40,7 @@ const Mega = () => {
 
   return (
     <div className="mega-container">
-      <p className='title'>
+      <p className="title">
         <span className="p-mega">Mega</span>{" "}
         <span className="p-millions">Millions</span>
       </p>
@@ -76,7 +76,12 @@ const Mega = () => {
           <button onClick={handleNumbers}>Get New Set</button>
         )}
       </div>
-      <GameDays day1='Tuesday' day2='Friday' time='7:45pm'/> 
+      <GameDays
+        day1="Tuesday"
+        day2="Friday"
+        time="7:45pm"
+        url="https://www.calottery.com/draw-games/mega-millions"
+      />
     </div>
   );
 }

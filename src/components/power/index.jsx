@@ -70,7 +70,12 @@ const Power = () => {
          <button onClick={handleNumbers}>Get New Set</button>
        )}
      </div>
-     <GameDays day1="Wednesday" day2="Saturday" time='7:00pm'/>
+     <GameDays
+       day1="Wednesday"
+       day2="Saturday"
+       time="7:00pm"
+       url="https://www.calottery.com/draw-games/powerball"
+     />
    </div>
  );
 }
