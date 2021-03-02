@@ -1,3 +1,15 @@
+# Welcome to the lotto app!
+
+For people in California who want to play the lottery and are having a hard time to pick sorted random winning numbers!  Give it try today!  
+
+`Designed to be used in your mobile phone on chrome.`
+
+### Ca Lottery
+  
+### Mega Millions
+
+### Powerball
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).

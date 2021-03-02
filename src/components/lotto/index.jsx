@@ -91,7 +91,12 @@ const Lotto = () => {
           <button onClick={handleNumbers}>Get New Set</button>
         )}
       </div>
-      <GameDays day1="Wednesday" day2="Saturday" time='7:45pm'/>
+      <GameDays
+        day1="Wednesday"
+        day2="Saturday"
+        time="7:45pm"
+        url='https://www.calottery.com/draw-games/superlotto-plus'
+      />
     </div>
   );
 }
