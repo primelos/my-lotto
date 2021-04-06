@@ -5,7 +5,13 @@ import GameDays from '../game-days'
 const Mega = () => {
   const [num, setNum] = useState([]);
   const [mega, setMega] = useState([]);
+  const [gameNumbers, setGameNumbers] = useState([])
+  const [showResults, setShowResults] = useState(false)
 
+  function show() {
+    setShowResults(!showResults)
+  }
+  
   function sortNums(a, b) {
     return a - b;
   }
@@ -35,8 +41,9 @@ const Mega = () => {
     setNum((prev) => (prev = test1.lotteryNums.sort(sortNums)));
     console.log(test1.lotteryNums);
     setMega((prev) => (prev = test1.megaNumber));
-  }
 
+    setGameNumbers(x => [...x, [test1.lotteryNums, test1.megaNumber]]);
+  }
 
   return (
     <div className="mega-container">
@@ -49,11 +56,13 @@ const Mega = () => {
           {num.length === 0 ? "" : <p>Numbers to play</p>}
 
           <div className="number-container">
-            {num.map((n, i) => (
-              <div className="box-num">
-                <p className="win-num">{n}</p>
-              </div>
-            ))}
+            {num.map((n, i) => {
+              return (
+                <div className="box-num" key={i}>
+                  <p className="win-num">{n}</p>
+                </div>
+              );
+            })}
           </div>
         </div>
 
@@ -76,6 +85,23 @@ const Mega = () => {
           <button onClick={handleNumbers}>Get New Set</button>
         )}
       </div>
+      <div className="gameHistory">
+        <div className='show-results' onClick={show}>
+          Show last 10 picks
+        </div>
+        { showResults ? gameNumbers
+          .slice(Math.max(gameNumbers.length - 10, 0))
+          .map((game, i) => {
+            let full = game.slice(0, 1);
+            let last = game.slice(1, 2);
+            return (
+              <p>
+                {String(full).split(", ")} <span> {last}</span>
+              </p>
+            );
+          }) : null}
+      </div>
+
       <GameDays
         day1="Tuesday"
         day2="Friday"
