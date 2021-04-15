@@ -1,8 +1,10 @@
 import React, { useState } from 'react'
+import { useHistory } from "react-router-dom";
 import './mega.styles.scss'
 import GameDays from '../game-days'
 
-const Mega = () => {
+const Mega = (props) => {
+  console.log(props)
   const [num, setNum] = useState([]);
   const [mega, setMega] = useState([]);
   const [gameNumbers, setGameNumbers] = useState([])
@@ -12,6 +14,12 @@ const Mega = () => {
     setShowResults(!showResults)
   }
   
+   let history = useHistory();
+
+   function handleClick() {
+     history.push("/");
+   }
+
   function sortNums(a, b) {
     return a - b;
   }
@@ -47,6 +55,9 @@ const Mega = () => {
 
   return (
     <div className="mega-container">
+      <div className="goback" onClick={handleClick}>
+        <button onClick={handleClick}>Go home</button>
+      </div>
       <p className="title">
         <span className="p-mega">Mega</span>{" "}
         <span className="p-millions">Millions</span>
@@ -86,20 +97,31 @@ const Mega = () => {
         )}
       </div>
       <div className="gameHistory">
-        <div className='show-results' onClick={show}>
-          Show last 10 picks
-        </div>
-        { showResults ? gameNumbers
-          .slice(Math.max(gameNumbers.length - 10, 0))
-          .map((game, i) => {
-            let full = game.slice(0, 1);
-            let last = game.slice(1, 2);
-            return (
-              <p>
-                {String(full).split(", ")} <span> {last}</span>
-              </p>
-            );
-          }) : null}
+        {
+          gameNumbers.length > 1 ? 
+          <div className="show-results" onClick={show}>
+            Show last 10 picks{" "}
+            {!showResults ? (
+              <i onClick={show} className="fas fa-caret-down"></i>
+            ) : (
+              <i onClick={show} className="fas fa-caret-up"></i>
+            )}
+          </div>
+        : null
+      }
+        {showResults
+          ? gameNumbers
+              .slice(Math.max(gameNumbers.length - 10, 0))
+              .map((game, i) => {
+                let full = game.slice(0, 1);
+                let last = game.slice(1, 2);
+                return (
+                  <p key={i}>
+                    {String(full).split(", ")} <span> {last}</span>
+                  </p>
+                );
+              })
+          : null}
       </div>
 
       <GameDays

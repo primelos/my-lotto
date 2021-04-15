@@ -7,7 +7,31 @@
   border: 10px solid #eed65f;
   background-image: linear-gradient(#d9d8cf26, #eed65f);
   position: relative;
+  
+  .goback {
+    display: flex;
+    justify-content: flex-end;
+    padding-right: 20px;
 
+    button{
+      padding: 8px 9px;
+      background-color: rgba(240, 199, 122, 0.308);
+      border: none;
+      outline: none;
+      transition: 0.2s;
+      transition-timing-function: ease-in;
+      border-radius: 4px;
+      cursor: alias;
+    }
+    button:hover{
+        color: rgb(73, 73, 73);
+        background-color: rgba(240, 199, 122, 0.979);
+        transform:scale(0.9);
+      }
+    // button:active{
+    //     transform:scale(0.9);
+    //   }
+  }
   .p-mega {
     color: #ee2721;
   }
@@ -100,6 +124,8 @@
       font-weight: 900;
       font-size: 1.2rem;
       border-radius: 8px;
+      transition: 0.2s;
+      transition-timing-function: ease-in;
 
     }
     button:hover {
@@ -110,6 +136,7 @@
       box-shadow: 1px 1px 5px lightgray, -1px -1px 5px lightgray;;
       transform:scale(0.9);
       color: lightgray;
+      cursor: grabbing;
     }
   }
   .gameHistory {
@@ -118,10 +145,18 @@
     align-items: center;
 
     .show-results {
-      cursor: pointer;
+      // cursor: pointer;
       margin-top: 40px;
-      border: 1px solid #edd65f;
-      width: 140px;
+      width: 212px;
+      padding: 18px;
+      .fas{
+        font-size: 20px;
+      
+      }
+      .fas:hover{
+        cursor: pointer;
+      }
+
     }
   }
   span {
