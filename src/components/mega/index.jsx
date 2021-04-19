@@ -1,62 +1,83 @@
-import React, { useState } from 'react'
+import React, { useState } from "react";
 import { useHistory } from "react-router-dom";
-import './mega.styles.scss'
-import GameDays from '../game-days'
+import "./mega.styles.scss";
+import GameDays from "../game-days";
 
 const Mega = (props) => {
-  console.log(props)
+  console.log(props);
   const [num, setNum] = useState([]);
   const [mega, setMega] = useState([]);
-  const [gameNumbers, setGameNumbers] = useState([])
-  const [showResults, setShowResults] = useState(false)
+  const [gameNumbers, setGameNumbers] = useState([]);
+  const [showResults, setShowResults] = useState(false);
 
   function show() {
-    setShowResults(!showResults)
+    setShowResults(!showResults);
   }
-  
-   let history = useHistory();
 
-   function handleClick() {
-     history.push("/");
-   }
+  let history = useHistory();
+
+  function handleClick() {
+    history.push("/");
+  }
 
   function sortNums(a, b) {
     return a - b;
   }
 
   function lottery() {
-    let lotteryNums = [];
-    let megaNumber = [];
+    // let lotteryNums = [];
+    // let megaNumber = [];
 
-    while (lotteryNums.length < 5) {
-      let lotNum = Math.floor(Math.random() * 1000);
-      if (lotNum > 0 && lotNum <= 70 && !lotteryNums.includes(lotNum)) {
-        lotteryNums.push(lotNum);
+    // while (lotteryNums.length < 5) {
+    //   let lotNum = Math.floor(Math.random() * 1000);
+    //   if (lotNum > 0 && lotNum <= 70 && !lotteryNums.includes(lotNum)) {
+    //     lotteryNums.push(lotNum);
+    //   }
+    // }
+    // while (megaNumber.length < 1) {
+    //   let mega = Math.floor(Math.random() * 1000);
+    //   if (mega > 0 && mega <= 25) {
+    //     megaNumber.push(mega);
+    //   }
+    // }
+
+    let fiveNums = [];
+    let megaNum = [];
+
+    while (fiveNums.length < 5) {
+      let emptyArray = new Uint32Array(1);
+      let ranNum = window.crypto.getRandomValues(emptyArray);
+      let mixedNum = Math.floor((ranNum * 5) / 100000000);
+      if (mixedNum > 0 && mixedNum <= 70 && !fiveNums.includes(mixedNum)) {
+        fiveNums.push(mixedNum);
       }
     }
-    while (megaNumber.length < 1) {
-      let mega = Math.floor(Math.random() * 1000);
-      if (mega > 0 && mega <= 25) {
-        megaNumber.push(mega);
+    while (megaNum.length < 1) {
+      let emptyArray = new Uint32Array(1);
+      let ranNum = window.crypto.getRandomValues(emptyArray);
+      let numToPush = Math.floor(ranNum[0] / 100000000);
+      if (numToPush > 0 && numToPush <= 25) {
+        megaNum.push(numToPush);
       }
     }
-
-    return { lotteryNums, megaNumber };
+    return { fiveNums, megaNum };
   }
 
   function handleNumbers() {
-    let test1 = lottery();
-    setNum((prev) => (prev = test1.lotteryNums.sort(sortNums)));
-    console.log(test1.lotteryNums);
-    setMega((prev) => (prev = test1.megaNumber));
+    let pickNumbers = lottery();
+    setNum((prev) => (prev = pickNumbers.fiveNums.sort(sortNums)));
+    setMega((prev) => (prev = pickNumbers.megaNum));
 
-    setGameNumbers(x => [...x, [test1.lotteryNums, test1.megaNumber]]);
+    setGameNumbers((x) => [...x, [pickNumbers.fiveNums, pickNumbers.megaNum]]);
   }
 
   return (
     <div className="mega-container">
       <div className="goback" onClick={handleClick}>
-        <button onClick={handleClick}>Go home</button>
+        <button onClick={handleClick}>
+          <span>Ho</span>
+          <span>me</span>
+          </button>
       </div>
       <p className="title">
         <span className="p-mega">Mega</span>{" "}
@@ -91,15 +112,14 @@ const Mega = (props) => {
       </div>
       <div className="box-button">
         {num.length < 1 ? (
-          <button onClick={handleNumbers}>New Numbers</button>
+          <button onClick={handleNumbers}>PLAY</button>
         ) : (
-          <button onClick={handleNumbers}>Get New Set</button>
+          <button onClick={handleNumbers}>GO AGAIN</button>
         )}
       </div>
       <div className="gameHistory">
-        {
-          gameNumbers.length > 1 ? 
-          <div className="show-results" onClick={show}>
+        {gameNumbers.length > 1 ? (
+          <div className="show-results">
             Show last 10 picks{" "}
             {!showResults ? (
               <i onClick={show} className="fas fa-caret-down"></i>
@@ -107,8 +127,7 @@ const Mega = (props) => {
               <i onClick={show} className="fas fa-caret-up"></i>
             )}
           </div>
-        : null
-      }
+        ) : null}
         {showResults
           ? gameNumbers
               .slice(Math.max(gameNumbers.length - 10, 0))
@@ -132,6 +151,6 @@ const Mega = (props) => {
       />
     </div>
   );
-}
+};
 
-export default Mega
+export default Mega;
