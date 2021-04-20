@@ -7,13 +7,13 @@
   border: 10px solid #eed65f;
   background-image: linear-gradient(#d9d8cf26, #eed65f);
   position: relative;
-  
+
   .goback {
     display: flex;
     justify-content: flex-end;
     padding-right: 20px;
 
-    button{
+    button {
       padding: 8px 9px;
       background-color: rgba(240, 199, 122, 0.308);
       border: none;
@@ -23,20 +23,18 @@
       border-radius: 4px;
       cursor: alias;
       font-weight: 600;
-
     }
-    button:hover{
-        color: rgb(73, 73, 73);
-        background-color: rgb(125 116 99 / 31%);
-        transform:scale(0.9);
-      }
-      span:nth-of-type(1){
-        color: #ee2721;
-      }
-      span:nth-of-type(2){
-        color: #27409b;
-      }
-
+    button:hover {
+      color: rgb(73, 73, 73);
+      background-color: rgb(125 116 99 / 31%);
+      transform: scale(0.9);
+    }
+    span:nth-of-type(1) {
+      color: #ee2721;
+    }
+    span:nth-of-type(2) {
+      color: #27409b;
+    }
   }
   .p-mega {
     color: #ee2721;
@@ -45,31 +43,27 @@
     color: #27409b;
   }
 
-  .title{
+  .title {
     font-size: 3.5rem;
     padding-bottom: 30px;
     color: #00a5e3;
   }
-  .game-results{
+  .game-results {
     display: flex;
     justify-content: space-around;
 
-
-    .five-numbers{
-      p{
+    .five-numbers {
+      p {
         font-size: 1.9rem;
         color: #0f5874;
         padding-bottom: 20px;
-        
-
       }
       .number-container {
         display: flex;
         // flex-direction: row;
         // justify-content: space-evenly;
-        
-    
-        .box-num{
+
+        .box-num {
           background-color: #e5e5b5;
           width: 55px;
           height: 55px;
@@ -79,42 +73,35 @@
           display: flex;
           justify-content: center;
 
-          
-        
           .win-num {
             color: #0f5874;
             font-weight: 900;
           }
         }
-    
       }
-
     }
     .mega {
-        margin-right: 10px;
-        p{
-          font-size: 1.9rem;
-          color:#0f5874;
-          padding-bottom: 20px;
-          
+      margin-right: 10px;
+      p {
+        font-size: 1.9rem;
+        color: #0f5874;
+        padding-bottom: 20px;
       }
-       .box-num{
-          background-color: #ffdf00;
-          width: 55px;
-          border: 2px rgba(71, 60, 11, 0.22) solid;
-          margin: 0 2px;
-          border-radius: 50%;
-          height: 55px;
-          display: flex;
-          justify-content: center;
-          
-        
-        
-          .win-num {
-            color: #0f5874;
-            font-weight: 900;
-          }
+      .box-num {
+        background-color: #ffdf00;
+        width: 55px;
+        border: 2px rgba(71, 60, 11, 0.22) solid;
+        margin: 0 2px;
+        border-radius: 50%;
+        height: 55px;
+        display: flex;
+        justify-content: center;
+
+        .win-num {
+          color: #0f5874;
+          font-weight: 900;
         }
+      }
     }
   }
 
@@ -132,15 +119,14 @@
       border-radius: 8px;
       transition: 0.2s;
       transition-timing-function: ease-in;
-
     }
     button:hover {
       background-color: #016990;
       cursor: pointer;
     }
     button:active {
-      box-shadow: 1px 1px 5px lightgray, -1px -1px 5px lightgray;;
-      transform:scale(0.9);
+      box-shadow: 1px 1px 5px lightgray, -1px -1px 5px lightgray;
+      transform: scale(0.9);
       color: lightgray;
       cursor: grabbing;
     }
@@ -155,14 +141,12 @@
       margin-top: 40px;
       width: 212px;
       padding: 18px;
-      .fas{
+      .fas {
         font-size: 20px;
-      
       }
-      .fas:hover{
+      .fas:hover {
         cursor: pointer;
       }
-
     }
   }
   span {
@@ -177,7 +161,7 @@
 //       .box-num{
 //           align-self: center;
 //           background-color: red;
-//           width: 80px;    
+//           width: 80px;
 //           border: 2px #fed102 solid;
 //     }
 //     }

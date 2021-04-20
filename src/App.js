@@ -1,10 +1,9 @@
-import './App.css';
-import Lotto from './components/lotto'
-import { Route, Switch } from 'react-router-dom'
-import HomePage from './pages/homepage'
-import Mega from './components/mega'
-import Power from './components/power'
-
+import "./App.css";
+import Lotto from "./components/lotto";
+import { Route, Switch } from "react-router-dom";
+import HomePage from "./pages/homepage";
+import Mega from "./components/mega";
+import Power from "./components/power";
 
 function App() {
   return (
