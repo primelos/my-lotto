@@ -1,6 +1,5 @@
-import React from 'react'
-import './game-day.styles.scss'
-
+import React from "react";
+import "./game-day.styles.scss";
 
 const GameDays = ({ day1, day2, time, url }) => {
   return (
@@ -9,13 +8,10 @@ const GameDays = ({ day1, day2, time, url }) => {
       <br />
       <p>{`Play by ${time}`}</p>
       <br />
-      
-        <a href={url}>
-          Check if you won!
-        </a>
-    
+
+      <a href={url}>Check if you won!</a>
     </div>
   );
-}
+};
 
-export default GameDays
+export default GameDays;

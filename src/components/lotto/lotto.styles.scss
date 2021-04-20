@@ -8,12 +8,12 @@
   background-image: linear-gradient(#ff8d0726, orange);
   position: relative;
 
-    .goback {
+  .goback {
     display: flex;
     justify-content: flex-end;
     padding-right: 20px;
 
-    button{
+    button {
       padding: 8px 9px;
       background-color: rgba(240, 199, 122, 0.308);
       border: none;
@@ -25,12 +25,11 @@
       color: #00a5e3;
       font-weight: 600;
     }
-    button:hover{
-        color: rgb(73, 73, 73);
-        background-color: rgba(240, 199, 122, 0.979);
-        transform:scale(0.9);
-      }
-  
+    button:hover {
+      color: rgb(73, 73, 73);
+      background-color: rgba(240, 199, 122, 0.979);
+      transform: scale(0.9);
+    }
   }
 
   .title {
@@ -138,5 +137,4 @@ $screen-md-min: 768px;
       }
     }
   }
-  
 }

@@ -77,7 +77,7 @@ const Mega = (props) => {
         <button onClick={handleClick}>
           <span>Ho</span>
           <span>me</span>
-          </button>
+        </button>
       </div>
       <p className="title">
         <span className="p-mega">Mega</span>{" "}

@@ -1,14 +1,14 @@
-import React, { useState } from 'react'
-import './lotto.styles.scss'
+import React, { useState } from "react";
+import "./lotto.styles.scss";
 import Button from "@material-ui/core/Button";
 import Menu from "@material-ui/core/Menu";
 import MenuItem from "@material-ui/core/MenuItem";
 import GameDays from "../game-days";
-import GameHistory from '../game-history';
+import GameHistory from "../game-history";
 import { useHistory } from "react-router-dom";
 
 const Lotto = () => {
-  const [num, setNum] = useState([])
+  const [num, setNum] = useState([]);
   const [mega, setMega] = useState([]);
   const [gameNumbers, setGameNumbers] = useState([]);
   const [showResults, setShowResults] = useState(false);
@@ -17,11 +17,11 @@ const Lotto = () => {
     setShowResults(!showResults);
   }
 
-     let history = useHistory();
+  let history = useHistory();
 
-      function handleClick() {
-        history.push("/");
-      }
+  function handleClick() {
+    history.push("/");
+  }
 
   function sortNums(a, b) {
     return a - b;
@@ -50,22 +50,17 @@ const Lotto = () => {
     return { fiveNums, megaNum };
   }
 
-
-  function handleNumbers(){
-    let pickNumbers = lottery()
-    setNum(prev => prev = pickNumbers.fiveNums.sort(sortNums))
-    setMega(prev => prev = pickNumbers.megaNum)
-    setGameNumbers((x) => [
-      ...x,
-      [pickNumbers.fiveNums, pickNumbers.megaNum],
-    ]);
+  function handleNumbers() {
+    let pickNumbers = lottery();
+    setNum((prev) => (prev = pickNumbers.fiveNums.sort(sortNums)));
+    setMega((prev) => (prev = pickNumbers.megaNum));
+    setGameNumbers((x) => [...x, [pickNumbers.fiveNums, pickNumbers.megaNum]]);
   }
-  console.log('here', gameNumbers)
+  console.log("here", gameNumbers);
   // useEffect(() => {
   //   console.log('in useEffect',num)
-    
-  // }, [num])
 
+  // }, [num])
 
   return (
     <div className="lotto-container">
@@ -111,7 +106,7 @@ const Lotto = () => {
         {num.length < 1 ? (
           <button onClick={handleNumbers}>PLAY</button>
         ) : (
-          <button onClick={handleNumbers}>Go AGAIN</button>
+          <button onClick={handleNumbers}>GO AGAIN</button>
         )}
       </div>
 
@@ -128,6 +123,6 @@ const Lotto = () => {
       />
     </div>
   );
-}
+};
 
-export default Lotto
+export default Lotto;

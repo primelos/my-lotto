@@ -1,9 +1,8 @@
-import React from 'react'
-import './game-history.scss'
-
+import React from "react";
+import "./game-history.scss";
 
 const GameHistory = ({ show, gameNumbers, showResults }) => {
-                console.log("lot", gameNumbers);
+  console.log("lot", gameNumbers);
 
   return (
     <div className="gameHistory">
@@ -33,6 +32,6 @@ const GameHistory = ({ show, gameNumbers, showResults }) => {
         : null}
     </div>
   );
-}
+};
 
-export default GameHistory
+export default GameHistory;

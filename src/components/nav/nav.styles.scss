@@ -14,14 +14,14 @@
     margin: 0 0 14px 0;
     box-shadow: 8px 6px 12px -1px #ca6a08f5;
     transition: background-color 2s ease-out;
-    &:hover{
+    &:hover {
       background-color: #e89515;
     }
-    &:active{
-      transform:scale(0.9);
-      transition: .2s ease-in-out;
+    &:active {
+      transform: scale(0.9);
+      transition: 0.2s ease-in-out;
     }
-    a{
+    a {
       text-align: center;
       color: #6b6b6b;
       font-weight: 600;

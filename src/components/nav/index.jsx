@@ -7,13 +7,22 @@ const Nav = () => {
     <div className="nav-box">
       <Link to="/"></Link>
       <div className="nav-button">
-        <Link to="/lotto">Ca<br/> Lottery</Link>
+        <Link to="/lotto">
+          Ca
+          <br /> Lottery
+        </Link>
       </div>
       <div className="nav-button">
-        <Link to="/mega">Mega<br/> Millions</Link>
+        <Link to="/mega">
+          Mega
+          <br /> Millions
+        </Link>
       </div>
       <div className="nav-button">
-        <Link to="/power">Power<br/> Ball</Link>
+        <Link to="/power">
+          Power
+          <br /> Ball
+        </Link>
       </div>
     </div>
   );
