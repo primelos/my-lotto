@@ -121,12 +121,12 @@
     button:hover {
       background-color: #016990;
       cursor: pointer;
-      cursor: grabbing;
     }
     button:active {
       box-shadow: 1px 1px 5px lightgray, -1px -1px 5px lightgray;
       transform: scale(0.9);
       color: lightgray;
+      cursor: grabbing;
     }
   }
 }
