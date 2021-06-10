@@ -67,15 +67,7 @@ const Lotto = () => {
       <div className="goback" onClick={handleClick}>
         <button onClick={handleClick}>Home</button>
       </div>
-      {/* <div>
-        <Button
-          aria-controls="simple-menu"
-          aria-haspopup="true"
-          // onClick={}
-        >
-          Open Menu
-        </Button>
-      </div> */}
+
       <p className="title">Super Lotto</p>
       <div className="game-results">
         <div className="five-numbers">

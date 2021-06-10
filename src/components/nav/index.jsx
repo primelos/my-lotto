@@ -5,25 +5,24 @@ import "./nav.styles.scss";
 const Nav = () => {
   return (
     <div className="nav-box">
-      <Link to="/"></Link>
-      <div className="nav-button">
-        <Link to="/lotto">
+      <Link className="nav-button" to="/lotto">
+        <div>
           Ca
           <br /> Lottery
-        </Link>
-      </div>
-      <div className="nav-button">
-        <Link to="/mega">
+        </div>
+      </Link>
+      <Link className="nav-button" to="/mega">
+        <div>
           Mega
           <br /> Millions
-        </Link>
-      </div>
-      <div className="nav-button">
-        <Link to="/power">
+        </div>
+      </Link>
+      <Link className="nav-button" to="/power">
+        <div>
           Power
           <br /> Ball
-        </Link>
-      </div>
+        </div>
+      </Link>
     </div>
   );
 };
