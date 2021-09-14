@@ -98,6 +98,7 @@ const Power = () => {
         showResults={showResults}
       />
       <GameDays
+        day0="Monday"
         day1="Wednesday"
         day2="Saturday"
         time="7:00pm"
