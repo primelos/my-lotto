@@ -40,6 +40,9 @@
   .game-results {
     display: flex;
     justify-content: space-around;
+    width: 50%;
+    max-width: 100%;
+    margin: auto;
 
     .five-numbers {
       p {
@@ -49,8 +52,6 @@
       }
       .number-container {
         display: flex;
-        // flex-direction: row;
-        // justify-content: space-evenly;
 
         .box-num {
           background-color: #fed102;
@@ -92,6 +93,9 @@
         }
       }
     }
+    @media screen and (max-width: 481px) {
+      width: 100%;
+    }
   }
 
   .box-button {
@@ -118,23 +122,6 @@
       transform: scale(0.9);
       color: lightgray;
       cursor: grabbing;
-    }
-  }
-}
-$screen-md-min: 768px;
-
-@mixin md {
-  @media (min-width: #{$screen-md-min}) {
-    .lotto-container {
-      background-color: green;
-      .number-container {
-        .box-num {
-          align-self: center;
-          background-color: red;
-          width: 80px;
-          border: 2px #fed102 solid;
-        }
-      }
     }
   }
 }

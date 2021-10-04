@@ -51,6 +51,9 @@
   .game-results {
     display: flex;
     justify-content: space-around;
+    width: 50%;
+    max-width: 100%;
+    margin: auto;
 
     .five-numbers {
       p {
@@ -60,8 +63,6 @@
       }
       .number-container {
         display: flex;
-        // flex-direction: row;
-        // justify-content: space-evenly;
 
         .box-num {
           background-color: #e5e5b5;
@@ -102,6 +103,9 @@
           font-weight: 900;
         }
       }
+    }
+    @media screen and (max-width: 481px) {
+      width: 100%;
     }
   }
 
@@ -153,17 +157,3 @@
     color: red;
   }
 }
-
-// @media (min-width: 768px) {
-//   .box-container{
-//     .number-container{
-
-//       .box-num{
-//           align-self: center;
-//           background-color: red;
-//           width: 80px;
-//           border: 2px #fed102 solid;
-//     }
-//     }
-//   }
-// }
