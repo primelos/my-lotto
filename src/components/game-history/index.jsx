@@ -2,8 +2,6 @@ import React from "react";
 import "./game-history.scss";
 
 const GameHistory = ({ show, gameNumbers, showResults }) => {
-  console.log("lot", gameNumbers);
-
   return (
     <div className="gameHistory">
       {gameNumbers.length > 1 ? (
