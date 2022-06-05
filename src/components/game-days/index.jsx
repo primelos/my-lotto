@@ -13,7 +13,7 @@ const GameDays = ({ day0, day1, day2, time, url }) => {
       <p>{`Play by ${time}`}</p>
       <br />
 
-      <a href={url} target="_blank">
+      <a href={url} target="_blank" rel="noreferrer">
         Check if you won!
       </a>
     </div>

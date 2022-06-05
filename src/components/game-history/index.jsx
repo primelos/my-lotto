@@ -14,20 +14,22 @@ const GameHistory = ({ show, gameNumbers, showResults }) => {
           )}
         </div>
       ) : null}
-      {showResults
-        ? gameNumbers
-            .slice(Math.max(gameNumbers.length - 10, 0))
+      <div className={`${showResults} ?  : '' `}>
+        {showResults
+          ? gameNumbers
+              .slice(Math.max(gameNumbers.length - 10, 0))
 
-            .map((game, i) => {
-              let full = game.slice(0, 1);
-              let last = game.slice(1, 2);
-              return (
-                <p key={i}>
-                  {String(full).split(", ")} <span> {last}</span>
-                </p>
-              );
-            })
-        : null}
+              .map((game, i) => {
+                let full = game.slice(0, 1);
+                let last = game.slice(1, 2);
+                return (
+                  <p key={i}>
+                    {String(full).split(", ")} <span> {last}</span>
+                  </p>
+                );
+              })
+          : null}
+      </div>
     </div>
   );
 };
