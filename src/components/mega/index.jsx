@@ -13,7 +13,7 @@ const Mega = () => {
 
   return (
     <div className="mega-container">
-      <div className="goback" onClick={handleClick}>
+      <div className="goback">
         <button onClick={handleClick}>
           <span>Ho</span>
           <span>me</span>

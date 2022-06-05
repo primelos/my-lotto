@@ -38,7 +38,7 @@ const GameLogic = ({ max, maxMega }) => {
     while (fiveNums.length < 5) {
       let emptyArray = new Uint32Array(1);
       let ranNum = window.crypto.getRandomValues(emptyArray);
-      let mixedNum = Math.floor((ranNum * 5) / 100000000);
+      let mixedNum = Math.floor((ranNum * 21) / 100000000);
       if (mixedNum > 0 && mixedNum <= max && !fiveNums.includes(mixedNum)) {
         fiveNums.push(mixedNum);
       }
@@ -46,7 +46,7 @@ const GameLogic = ({ max, maxMega }) => {
     while (megaNum.length < 1) {
       let emptyArray = new Uint32Array(1);
       let ranNum = window.crypto.getRandomValues(emptyArray);
-      let numToPush = Math.floor(ranNum[0] / 100000000);
+      let numToPush = Math.floor((ranNum * 21) / 100000000);
       if (numToPush > 0 && numToPush <= maxMega) {
         megaNum.push(numToPush);
       }
@@ -106,5 +106,3 @@ const GameLogic = ({ max, maxMega }) => {
 };
 
 export default GameLogic;
-{
-}

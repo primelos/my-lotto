@@ -13,7 +13,7 @@ const Power = () => {
 
   return (
     <div className="power-container">
-      <div className="goback" onClick={handleClick}>
+      <div className="goback">
         <button onClick={handleClick}>Home</button>
       </div>
       <p className="title">POWERBALL</p>
