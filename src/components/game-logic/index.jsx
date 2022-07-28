@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import GameHistory from "../game-history";
 
-const GameLogic = ({ max, maxMega }) => {
+const GameLogic = ({ max, maxMega, megaNeeded = "yes", numbersNeeded = 5 }) => {
   const [num, setNum] = useState([]);
   const [mega, setMega] = useState([]);
   const [gameNumbers, setGameNumbers] = useState([]);
@@ -35,7 +35,7 @@ const GameLogic = ({ max, maxMega }) => {
     let fiveNums = [];
     let megaNum = [];
 
-    while (fiveNums.length < 5) {
+    while (fiveNums.length < numbersNeeded) {
       let emptyArray = new Uint32Array(1);
       let ranNum = window.crypto.getRandomValues(emptyArray);
       let mixedNum = Math.floor((ranNum * 21) / 100000000);
@@ -43,12 +43,14 @@ const GameLogic = ({ max, maxMega }) => {
         fiveNums.push(mixedNum);
       }
     }
-    while (megaNum.length < 1) {
-      let emptyArray = new Uint32Array(1);
-      let ranNum = window.crypto.getRandomValues(emptyArray);
-      let numToPush = Math.floor((ranNum * 21) / 100000000);
-      if (numToPush > 0 && numToPush <= maxMega) {
-        megaNum.push(numToPush);
+    if (megaNeeded === "yes") {
+      while (megaNum.length < 1) {
+        let emptyArray = new Uint32Array(1);
+        let ranNum = window.crypto.getRandomValues(emptyArray);
+        let numToPush = Math.floor((ranNum * 21) / 100000000);
+        if (numToPush > 0 && numToPush <= maxMega) {
+          megaNum.push(numToPush);
+        }
       }
     }
     return { fiveNums, megaNum };
@@ -56,9 +58,17 @@ const GameLogic = ({ max, maxMega }) => {
 
   function handleNumbers() {
     let pickNumbers = lottery();
-    setNum((prev) => (prev = pickNumbers.fiveNums.sort(sortNums)));
-    setMega((prev) => (prev = pickNumbers.megaNum));
-    setGameNumbers((x) => [...x, [pickNumbers.fiveNums, pickNumbers.megaNum]]);
+    if (pickNumbers.megaNum.length > 0) {
+      setNum((prev) => (prev = pickNumbers.fiveNums.sort(sortNums)));
+      setMega((prev) => (prev = pickNumbers.megaNum));
+      setGameNumbers((x) => [
+        ...x,
+        [pickNumbers.fiveNums, pickNumbers.megaNum],
+      ]);
+    } else {
+      setNum((prev) => (prev = pickNumbers.fiveNums.sort(sortNums)));
+      setGameNumbers((x) => [...x, [pickNumbers.fiveNums]]);
+    }
   }
   return (
     <>
@@ -76,18 +86,19 @@ const GameLogic = ({ max, maxMega }) => {
             })}
           </div>
         </div>
+        {megaNeeded === "yes" ? (
+          <div className="mega">
+            {num.length === 0 ? "" : <p>Mega</p>}
 
-        <div className="mega">
-          {num.length === 0 ? "" : <p>Mega</p>}
-
-          {mega.length === 0 ? (
-            ""
-          ) : (
-            <div className="box-num">
-              <p className="win-num">{mega}</p>
-            </div>
-          )}
-        </div>
+            {mega.length === 0 ? (
+              ""
+            ) : (
+              <div className="box-num">
+                <p className="win-num">{mega}</p>
+              </div>
+            )}
+          </div>
+        ) : null}
       </div>
       <div className="box-button">
         {num.length < 1 ? (
