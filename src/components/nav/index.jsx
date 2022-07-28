@@ -23,6 +23,12 @@ const Nav = () => {
           <br /> Ball
         </div>
       </Link>
+      <Link className="nav-button" to="/random">
+        <div>
+          Random
+          <br /> Numbers
+        </div>
+      </Link>
     </div>
   );
 };

@@ -16,7 +16,7 @@ const Power = () => {
       <div className="goback">
         <button onClick={handleClick}>Home</button>
       </div>
-      <p className="title">POWERBALL</p>
+      <p className="title">Power Ball</p>
       <GameLogic max={69} maxMega={26} />
       <GameDays
         day0="Monday"
